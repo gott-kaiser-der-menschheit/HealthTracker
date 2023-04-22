@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script> 
+    $(document).ready(function(){
+        $(function()
+{  
+     
+    var width = 900;  
+    var animationSpeed = 1000;  
+    var pause = 3000;  
+    var currentSlide = 1;  
+    
+    var $slider = $('#slider');  
+    var $sliderAnimation = $slider.find('.slides');  
+    var $slides = $sliderAnimation.find('.slide');  
+  
+    setInterval(function()
+    {  
+         $sliderAnimation.animate({'margin-left': '-='+width}, animationSpeed, function(){  
+         currentSlide ++;  
+         if(currentSlide === $slides.length)  
+         {  
+                $sliderAnimation.css('margin-left', 0);  
+                currentSlide = 1;  
+         }  
+     });  
+    },pause);  
+});  
+
+
+      $("#flip").mouseover(function(){
+        $("#panel").slideDown("slow");
+        $("handle").hide();
+        $("contents").hide();
+       
+      });
+       
+
+
+
+      $("#panel").mouseleave(function(){
+        $("#panel").slideUp("slow");
+        $("#openWindow").kendoButton();
+        $("handle").show();
+        $("contents").show();
+      });
+      $("button").click(function(){
+  
+
+}); 
+    });
+    </script>
+    <style> 
+    #panel, #flip {
+      padding: 10px;
+      
+      text-align: center;
+      background-color: aquamarine;
+     
+      color : solid black;
+      
+    }
+    
+    
+   
+    .list{
+        
+        background-color: aquamarine;
+        padding: 10px;
+        font-size: large;
+
+    }
+    .list:hover{
+        background-color: cadetblue;
+    }
+    #slider{  
+    width:900px;  
+    height:400px;  
+    margin: 10%;  
+    margin-left:15%;  
+    overflow:hidden;  
+}  
+.slides{  
+    display:block;  
+    width:6000px;  
+    height:400px;  
+    margin-left:0;  
+    padding:0;  
+}  
+.slide{  
+    float:left;  
+    list-style-type:none;  
+    width:900px;  
+    height:400px;  
+}  
+img{  
+    width:900px;  
+    height:400px;  
+}  
+
+
+
+
+
+    </style>
+    </head>
+    <body>
+     
+    <div id="flip">HealthUP</div>
+    <div id="panel">
+     <p class="list"><a href="">Home</a></p>
+     <p class="list"><a href="">Login in</a></p>
+     <p class="list"><a href="">JOIN NOW</a></p>
+     <p class="list"><a href="">Contact</a></p>
+     <p class="list"><a href="">About Us</a></p>
+        
+     
+  </div>
+  
+  <div class="container">  
+            <header>  
+                <div id="slider">  
+                    <ul class="slides">  
+                        <li class="slide"><img src="images/images1.jpeg"></li>  
+                        <li class="slide"><img src="images/images2.jpeg"></li>  
+                        <li class="slide"><img src="images/images3.jpeg"></li>  
+                        <li class="slide"><img src="images/images4.jpeg"></li>  
+                        <li class="slide"><img src="images/images5.jpeg"></li>  
+                         
+  
+                    </ul>  
+                </div>  
+            </header>  
+        </div>  
+
+  
+</body>
+</html>
